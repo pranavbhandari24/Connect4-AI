@@ -1,3 +1,4 @@
+# Description
 This is a connect4 game with an AI agent as a computer. 
 
 # Game Modes
