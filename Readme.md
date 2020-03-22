@@ -2,7 +2,7 @@
 This is a connect4 game with an AI agent as a computer. 
 
 # Game Modes
-## Interactive
+## a. Interactive
 In the interactive mode, the game should run from the command line with the following arguments
     python maxconnect4.py interactive [input-file] [computer-next/human-next] [depth]
 1. Argument [inputfile] - file containing the initial board state.This way we can start the program from a non-empty board state. If the input file does not exist, the program should just create an empty board state and start again from there.
@@ -11,6 +11,6 @@ In the interactive mode, the game should run from the command line with the foll
 
 In this mode, the user can play against the AI Agent. The difficulty level of the AI Agent will increase with the depth value. Therefore, if the depth value is high, difficulty will be high. 
 
-## One-Move Mode
+## b. One-Move Mode
 The purpose of the one-move mode is to make it easy for programs to compete against each other, and communicate their moves to each other using text files. The one-move mode is invoked as follows:
     python maxconnect4 one-move [input_file] [output_file] [depth]
