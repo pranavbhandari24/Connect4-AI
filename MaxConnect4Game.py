@@ -9,13 +9,13 @@ import random
 import sys
 
 class maxConnect4Game:
-    def __init__(self,depth):
+    def __init__(self):
         self.gameBoard = [[0 for i in range(7)] for j in range(6)]
         self.currentTurn = 1
         self.player1Score = 0
         self.player2Score = 0
         self.pieceCount = 0
-        self.depth_level = depth
+        self.depth_level = 0
         self.gameFile = None
         random.seed()
 

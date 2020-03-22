@@ -69,13 +69,13 @@ def main(argv):
         print('or: %s one-move [input_file] [output_file] [depth]' % argv[0])
         sys.exit(2)
 
-    game_mode, inFile, player, depth = argv[1:5]
+    game_mode, inFile= argv[1:3]
 
     if not game_mode == 'interactive' and not game_mode == 'one-move':
         print('%s is an unrecognized game mode' % game_mode)
         sys.exit(2)
 
-    currentGame = maxConnect4Game(depth) # Create a game
+    currentGame = maxConnect4Game() # Create a game
 
     # Try to open the input file
     try:
@@ -99,6 +99,8 @@ def main(argv):
     print('Score: Player 1 = %d, Player 2 = %d\n' % (currentGame.player1Score, currentGame.player2Score))
 
     if game_mode == 'interactive':
+        player, depth = argv[3:5]
+        currentGame.depth_level = depth
         interactiveGame(currentGame, player) # Be sure to pass whatever else you need from the command line
     else: # game_mode == 'one-move'
         # Set up the output file
