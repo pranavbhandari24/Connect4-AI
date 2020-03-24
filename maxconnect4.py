@@ -17,7 +17,7 @@ def oneMoveGame(currentGame):
     print 'Game state after move:'
     currentGame.printGameBoard()
 
-    currentGame.countScore()
+    currentGame.player1Score, currentGame.player2Score = countScore(currentGame.gameBoard)
     print('Score: Player 1 = %d, Player 2 = %d\n' % (currentGame.player1Score, currentGame.player2Score))
 
     currentGame.printGameBoardToFile()
@@ -56,11 +56,9 @@ def interactiveGame(currentGame, player):
             player = 'computer-next'
         # Print game and score
         currentGame.printGameBoard()
-        currentGame.countScore()
+        currentGame.player1Score, currentGame.player2Score = countScore(currentGame.gameBoard)
         print('Score: Player 1 = %d, Player 2 = %d\n' % (currentGame.player1Score, currentGame.player2Score))
     
-
-
 def main(argv):
     # Make sure we have enough command-line arguments
     if len(argv) != 5:
@@ -95,12 +93,12 @@ def main(argv):
 
     # Update a few game variables based on initial state and print the score
     currentGame.checkPieceCount()
-    currentGame.countScore()
+    currentGame.player1Score, currentGame.player2Score = countScore(currentGame.gameBoard)
     print('Score: Player 1 = %d, Player 2 = %d\n' % (currentGame.player1Score, currentGame.player2Score))
 
     if game_mode == 'interactive':
         player, depth = argv[3:5]
-        currentGame.depth_level = depth
+        currentGame.depth_level = int(depth)
         interactiveGame(currentGame, player) # Be sure to pass whatever else you need from the command line
     else: # game_mode == 'one-move'
         # Set up the output file
