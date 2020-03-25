@@ -1,4 +1,5 @@
 Evaluation Function for Minimax Algorithm explaination:
+
     The evaluation function chosen for the Minimax Algorithm to calculate the utility value for
     depth-limited search and terminal nodes is
         AIScore - player2Score
