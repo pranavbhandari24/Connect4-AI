@@ -9,7 +9,7 @@ In the interactive mode, the game should run from the command line with the foll
 2. Argument [computer-next/human-next] specifies whether the computer should make the next move or the human. 
 3. Argument [depth] specifies the number of moves in advance that the computer should consider while searching for its next move. In other words, this argument specifies the depth of the search tree. Essentially, this argument will control the time takes for the computer to make a move.
 
-In this mode, the user can play against the AI Agent. The difficulty level of the AI Agent will increase with the depth value. Therefore, if the depth value is high, difficulty will be high. 
+In this mode, the user can play against the AI Agent. 
 
 ## b. One-Move Mode
 The purpose of the one-move mode is to make it easy for programs to compete against each other, and communicate their moves to each other using text files. The one-move mode is invoked as follows:

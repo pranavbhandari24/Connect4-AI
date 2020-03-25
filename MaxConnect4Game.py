@@ -259,7 +259,11 @@ class maxConnect4Game:
             return self.utility_value(tempBoard)
         
         min = sys.maxint
-        opponent_turn = 1 if self.currentTurn==2 else 2
+        if self.currentTurn==1:
+            opponent_turn = 2
+        else:
+            opponent_turn = 1
+        
         # For all actions finding the min of max_value
         for i in range(7):
             if not self.gameBoard[0][i]:
@@ -273,7 +277,8 @@ class maxConnect4Game:
                     min = value
                 if min <= alpha:
                     return min
-                beta = min if min < beta else beta
+                if min < beta:
+                    beta = min
         return min
 
     def max_value(self, tempBoard, virtual_pieceCount, depth, alpha, beta):
@@ -294,7 +299,8 @@ class maxConnect4Game:
                     max = value
                 if max >= beta:
                     return max
-                alpha = max if max > alpha else alpha
+                if max > alpha:
+                    alpha = max
         return max
 
     def minimax(self, virtual_pieceCount, alpha, beta):

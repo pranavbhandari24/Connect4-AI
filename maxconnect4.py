@@ -12,7 +12,7 @@ def oneMoveGame(currentGame):
         print 'BOARD FULL\n\nGame Over!\n'
         sys.exit(0)
 
-    currentGame.aiPlay() # Make a move (only random is implemented)
+    currentGame.aiPlay() # Make a move
 
     print 'Game state after move:'
     currentGame.printGameBoard()
@@ -95,10 +95,10 @@ def main(argv):
     currentGame.checkPieceCount()
     currentGame.player1Score, currentGame.player2Score = countScore(currentGame.gameBoard)
     print('Score: Player 1 = %d, Player 2 = %d\n' % (currentGame.player1Score, currentGame.player2Score))
-
+    depth = int(argv[4])
+    currentGame.depth_level = depth
     if game_mode == 'interactive':
-        player, depth = argv[3:5]
-        currentGame.depth_level = int(depth)
+        player= argv[3]
         interactiveGame(currentGame, player) # Be sure to pass whatever else you need from the command line
     else: # game_mode == 'one-move'
         # Set up the output file
